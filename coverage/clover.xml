@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1616688258348" clover="3.2.0">
-  <project timestamp="1616688258348" name="All files">
+<coverage generated="1616688305998" clover="3.2.0">
+  <project timestamp="1616688305998" name="All files">
     <metrics statements="109" coveredstatements="24" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="1" elements="114" coveredelements="28" complexity="0" loc="109" ncloc="109" packages="1" files="1" classes="1"/>
     <file name="index.js" path="/Users/arran/WebstormProjects/strapi-provider-upload-aws-s3-with-webp/lib/index.js">
       <metrics statements="109" coveredstatements="24" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="1"/>
