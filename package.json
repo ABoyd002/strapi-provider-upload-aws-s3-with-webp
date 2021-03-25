@@ -13,9 +13,19 @@
     "lib": "./lib"
   },
   "main": "./lib",
+  "scripts": {
+    "lint": "eslint ./lib/**",
+    "test": "jest"
+  },
   "dependencies": {
     "aws-sdk": "^2.756.0",
     "sharp": "^0.27.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^26.6.3"
   },
   "strapi": {
     "isProvider": true
@@ -30,8 +40,5 @@
     "npm": ">=6.0.0"
   },
   "license": "MIT",
-  "scripts": {
-    "test": "echo \"no tests yet\""
-  },
   "gitHead": "c85658a19b8fef0f3164c19693a45db305dc07a9"
 }
