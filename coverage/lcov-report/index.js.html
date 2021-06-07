@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.02% </span>
+                <span class="strong">21.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>24/109</span>
+                <span class='fraction'>24/112</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.02% </span>
+                <span class="strong">21.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>24/109</span>
+                <span class='fraction'>24/112</span>
             </div>
         
             
@@ -166,28 +166,34 @@
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
 <a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -304,6 +310,13 @@ module.exports = {
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
 <span class="cstat-no" title="statement not covered" >      async upload(file, customParams = {}) {</span>
+<span class="cstat-no" title="statement not covered" >        let webP;</span>
+<span class="cstat-no" title="statement not covered" >        if (isImage(file)) {</span>
+<span class="cstat-no" title="statement not covered" >          webP = await sharp(file.buffer)</span>
+<span class="cstat-no" title="statement not covered" >            .webp()</span>
+<span class="cstat-no" title="statement not covered" >            .toBuffer();</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return new Promise((resolve, reject) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >          // upload file on S3 bucket</span>
 <span class="cstat-no" title="statement not covered" >          const path = file.path ? `${file.path}/` : "";</span>
@@ -325,10 +338,6 @@ module.exports = {
 <span class="cstat-no" title="statement not covered" >          );</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >          if (isImage(file)) {</span>
-<span class="cstat-no" title="statement not covered" >            const webP = sharp(file.buffer)</span>
-<span class="cstat-no" title="statement not covered" >              .webp()</span>
-<span class="cstat-no" title="statement not covered" >              .toBuffer();</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            S3.upload(</span>
 <span class="cstat-no" title="statement not covered" >              {</span>
 <span class="cstat-no" title="statement not covered" >                Key: `webp/${path}${file.hash}.webp`,</span>
@@ -391,7 +400,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Mar 25 2021 16:05:05 GMT+0000 (Greenwich Mean Time)
+                at Mon Jun 07 2021 12:02:51 GMT+0100 (British Summer Time)
             </div>
         </div>
         <script src="prettify.js"></script>
